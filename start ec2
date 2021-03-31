@@ -1,0 +1,15 @@
+--- #ec2 start
+- name: start ec2
+  hosts: web
+  connection: local
+
+  tasks:
+          - name: start ec2
+            ec2:
+                    instance_ids: i-01df8c3052620fdeb
+                    region: us-east-1
+                    state: running
+                    vpc_subnet_id: subnet-f6ae38bb
+                    assign_public_ip: yes
+                    aws_access_key: AKIA3JAWDGORYGGYUHJBAFSFZEU
+                    aws_secret_key: r14NrntbzF7OMcZDYKKHKJHJtzIs0MSNkeNTL9h2x1hXub
