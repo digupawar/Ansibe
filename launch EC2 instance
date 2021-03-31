@@ -1,0 +1,18 @@
+--- #ec2 instance
+- name: launching ec2
+  hosts: web
+  connection: local
+  tasks:
+          - name: launching ec2
+            ec2:
+                    key_name: VPCdemo    #Get this from ec2 dashboard-->key pairs
+                    region: us-east-1
+                    instance_type: t2.micro 
+                    image: ami-0742b4e673072066f  #Image id
+                    group: ansible-sg  #security group
+                    vpc_subnet_id: subnet-f6ae38bb 
+                    assign_public_ip: yes
+                    count: 1
+                    #generte from "my Security Credentials" (IAM)
+                    aws_access_key: enter access_key   
+                    aws_secret_key: secret_key
