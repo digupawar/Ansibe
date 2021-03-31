@@ -12,7 +12,7 @@
                     group: ansible-sg  #security group
                     vpc_subnet_id: subnet-f6ae38bb 
                     assign_public_ip: yes
-                    count: 1
+                    count: 1  #number of instances
                     #generte from "my Security Credentials" (IAM)
                     aws_access_key: enter access_key   
                     aws_secret_key: secret_key
