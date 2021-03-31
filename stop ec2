@@ -1,0 +1,18 @@
+--- #ec2 stopping
+- name: stop ec2
+  hosts: web
+  connection: local
+  vars:
+          instance_ids:
+                  - i-01df8c3052620fdeb
+
+  tasks:
+          - name: stop ec2
+            ec2:
+                    instance_ids: "{{instance_ids}}"
+                    region: us-east-1
+                    state: stopped
+                    vpc_subnet_id: subnet-f6ae38bb
+                    assign_public_ip: yes
+                    aws_access_key: hhggguieuirierie
+                    aws_secret_key: r14NrntbzF7OMcZDYffdjhfjdhgKtzIs0MSNkeNTL9h2x1hXub
