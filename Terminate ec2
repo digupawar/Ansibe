@@ -1,0 +1,17 @@
+---
+- hosts: web
+  connection: local
+  vars:
+          instance_ids:
+                  - i-025ca338b517086b9
+                  - i-044b587c87bae2c18
+  tasks:
+          - name: Terminate ec2 instances
+            ec2:
+                    instance_ids: "{{instance_ids}}"
+                    region: us-east-1
+                    vpc_subnet_id: subnet-f6ae38bb
+                    assign_public_ip: yes
+                    aws_access_key: AKIA3JAWDGORPMAU65HC
+                    aws_secret_key: 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
+                    state: absent
